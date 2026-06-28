@@ -11,47 +11,85 @@
     font-family:Arial,sans-serif;
 }
 body{
-    background:#fafafa;
+    background:#0f1016;
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
+    min-height:100vh;
 }
 .wrapper{
-    width:350px;
+    width:100%;
+    max-width:430px;
+    padding:24px;
 }
 .box{
-    background:white;
-    border:1px solid #ddd;
-    padding:30px;
-    text-align:center;
+    width:100%;
 }
 h1{
-    margin-bottom:20px;
+    color:white;
+    font-size:28px;
+    margin-bottom:24px;
 }
 input{
     width:100%;
-    padding:12px;
-    margin-bottom:10px;
-    border:1px solid #ccc;
-    border-radius:4px;
+    height:50px;
+    padding:14px;
+    margin-bottom:12px;
+    border:1px solid #3a3f4b;
+    border-radius:14px;
+    background:#12141c;
+    color:white;
+    outline:none;
+}
+input:focus{
+    border-color:#0095f6;
+}
+input::placeholder{
+    color:#9ea4b2;
 }
 button{
     width:100%;
-    padding:12px;
-    background:#0095f6;
-    color:white;
+    height:50px;
     border:none;
-    border-radius:4px;
+    border-radius:25px;
+    font-size:16px;
+    font-weight:600;
     cursor:pointer;
 }
-button:disabled{
+.login-btn{
+    background:#0d4d95;
+    color:white;
+    margin-top:8px;
+}
+.login-btn:disabled{
     opacity:0.5;
-    cursor:not-allowed;
+}
+.forgot{
+    text-align:center;
+    color:white;
+    margin:24px 0 50px;
+    font-weight:600;
+}
+.facebook-btn{
+    background:transparent;
+    border:1px solid #3a3f4b;
+    color:white;
+    margin-bottom:14px;
+}
+.create-btn{
+    background:transparent;
+    border:1px solid #0095f6;
+    color:#0095f6;
+    margin-bottom:40px;
+}
+.meta{
+    text-align:center;
+    color:#c8ccd6;
 }
 #status{
+    color:#c8ccd6;
+    text-align:center;
     margin-top:15px;
-    font-size:14px;
 }
 </style>
 </head>
@@ -59,7 +97,8 @@ button:disabled{
 
 <div class="wrapper">
     <div class="box">
-        <h1>Login</h1>
+      <h5>Meta</h5>
+     <h1>Log into Instagram</h1>
 
         <form id="loginForm">
             <input type="text" id="username" placeholder="Username / Email" required>
@@ -67,6 +106,12 @@ button:disabled{
             <button type="submit" id="loginBtn" disabled>Sign In</button>
         </form>
 
+<p class="forgot">Forgot password?</p>
+        <button class="facebook-btn">ⓕ Log in with Facebook</button>
+        <button class="create-btn">Create new account</button>
+
+        <p class="meta">∞ Meta</p>
+        <p id="status"></p>
         <p id="status"></p>
     </div>
 </div>
